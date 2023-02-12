@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="wordbank.js"></script>
+    <script>
+      $(document).ready(function() {
+        var word = "example";
+        words.sort();
+        
+        $("#randomize-button").click(function() {
+            var randomWord = words[Math.floor(Math.random() * words.length)];
+            var decodedWord = decodeURIComponent(randomWord);
+            decodedWord = decodedWord.replace(/\s/g, '%20');
+
+            $.ajax({
+                type: "GET",
+                url: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + encodeURIComponent(randomWord) + "?key=2595c17b-3904-44b3-a1f0-9abac7112778",
+                success: function(data) {
+                    var definitionList = "";
+                    for (var i = 0; i < data[0].shortdef.length; i++) {
+                        definitionList += "<li>" + data[0].shortdef[i] + "</li>";
+                    }
+                    $("#word-definition").html("<h2><a href='https://www.merriam-webster.com/dictionary/" + randomWord + "' target='_blank'>" + randomWord + "</a></h2>" +
+                                                "<p>Part of speech: " + data[0].fl + "</p>" +
+                                                "<p>Pronunciation: " + data[0].hwi.hw + "</p>" +
+                                                "<ol>" + definitionList + "</ol>");
+                }
+            });
+        });
+
+        var wordList = "";
+        for (var i = 0; i < words.length; i++) {
+            var decodedWord = decodeURIComponent(words[i]);
+            wordList += "<li><a href='https://www.merriam-webster.com/dictionary/" + words[i] + "' target='_blank'>" + decodedWord + "</a></li>";
+        }
+        $("#word-bank").html("<h2>Word Bank</h2><ul>" + wordList + "</ul>");
+    });
+</script>
+
+  </head>
+  <body>
+    <h1>Lexicon</h1>
+    <button id="randomize-button">Randomize</button>
+    <div id="word-definition"></div>
+    <div id="word-bank"></div>
+  </body>
+</html>
