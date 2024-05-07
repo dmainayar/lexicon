@@ -527,7 +527,7 @@ var words = [
     'weltschmerz',
     'winnow',
     'yen',
-    'zeitgeist'
+    'zeitgeist',
     'paynim',
     'soldan',
     'amerced',
