@@ -613,5 +613,4 @@ var words = [
     'incunabulum',
     'Accouchement',
     'Immiscible',
-    'charivari'
-    ].sort();
+    'charivari'].sort();
