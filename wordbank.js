@@ -613,5 +613,9 @@ var words = [
     'Accouchement',
     'Immiscible',
     'charivari',
-encodeURIComponent("will-o'-the-wisp")
-].sort();
+encodeURIComponent("will-o'-the-wisp")];
+    words.sort(function(a, b) {
+        return a.localeCompare(b, 'en', { sensitivity: 'base' });
+});
+
+// ].sort();
