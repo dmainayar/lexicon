@@ -614,6 +614,4 @@ var words = [
     'Immiscible',
     'charivari',
 encodeURIComponent("will-o'-the-wisp")];
-words.sort(function(a, b) {
-    return a.localeCompare(b, 'en-US', { sensitivity: 'base' });
-});
+].sort();
