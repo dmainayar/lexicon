@@ -612,5 +612,6 @@ var words = [
     'incunabulum',
     'Accouchement',
     'Immiscible',
-    'charivari'
+    'charivari',
+encodeURIComponent("will-o'-the-wisp")
 ].sort();
