@@ -544,7 +544,6 @@ var words = [
     'mawkish',
     'brogue',
     'manuduction',
-    'will-o'-the-wisp',
     'ignis fatuus',
     'glossolalia',
     'ixnay',
@@ -613,4 +612,5 @@ var words = [
     'incunabulum',
     'Accouchement',
     'Immiscible',
-    'charivari'].sort();
+    'charivari'
+].sort();
