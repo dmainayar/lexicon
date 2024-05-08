@@ -613,5 +613,5 @@ var words = [
     'Accouchement',
     'Immiscible',
     'charivari',
-encodeURIComponent("will-o'-the-wisp")];
+encodeURIComponent("will-o'-the-wisp")
 ].sort();
